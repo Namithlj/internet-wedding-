@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "hbs": "^4.2.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.4"
+  },
+  "scripts": {
+    "n": "node src/js/app.js",
+    "na": "nodemon src/js/app.js",
+    "start": "node src/db/conn.js"
+  }
+}

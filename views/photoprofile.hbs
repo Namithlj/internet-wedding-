@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style/photo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="photo.hbs">Home</a>
+            <a href="photologin.hbs">Login</a>
+            <a href="photoregister.hbs">Register</a>
+        </nav>
+    </header>
+    <main>
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <p>Name: John Doe</p>
+            <p>Email: john@example.com</p>
+            <p>Mobile: 123-456-7890</p>
+        </div>
+        <div class="user-photos">
+            <h2>Your Photos</h2>
+            <img src="profile1.jpg" alt="Profile Photo 1">
+            <img src="profile2.jpg" alt="Profile Photo 2">
+        </div>
+        <form action="upload" method="post" enctype="multipart/form-data">
+            <label for="photo">Upload More Photos:</label>
+            <input type="file" id="photo" name="photo" multiple>
+            <button type="submit">Upload</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Photo Sharing App</p>
+    </footer>
+</body>
+</html>

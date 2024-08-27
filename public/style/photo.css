@@ -1,0 +1,112 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:rgb(50,80,10);
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 1rem;
+}
+
+/* Navigation Links Styling */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+/* Main Content Styling */
+main {
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Default background for main */
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styling */
+form {
+    margin-top: 1rem;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Sample Pictures and User Photos Styling */
+.sample-pictures img,
+.user-photos img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0.5rem;
+}
+
+/* Background Images for Different Pages */
+.home {
+    background: url('home-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.register {
+    background: url('register-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login {
+    background: url('login-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.profile {
+    background: url('profile-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
