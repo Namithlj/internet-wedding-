@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs'); // For password hashing
 
-// Define the schema
+// Define the user schema
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -52,7 +52,18 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
     }
 };
 
-// Create a model
-const Photo = mongoose.model('Photo', userSchema);
+// Define the photo schema
+const photoSchema = new mongoose.Schema({
+    image: Buffer,
+    contentType: String,
+});
 
-module.exports = Photo;
+// Create models
+const Photo = mongoose.model('Photo', userSchema);
+const Photoimage = mongoose.model('Photoimage', photoSchema);
+
+// Export models
+module.exports = {
+    Photo,
+    Photoimage,
+};

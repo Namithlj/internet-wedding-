@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="style/photo.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = new URLSearchParams(window.location.search).get('email');
+            if (email) {
+                fetch(`/image/${email}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const imageContainer = document.getElementById('image-container');
+                        data.forEach(photo => {
+                            const img = document.createElement('img');
+                            img.src = `data:${photo.contentType};base64,${photo.image.toString('base64')}`; // Convert buffer to base64
+                            img.alt = 'User Image';
+                            imageContainer.appendChild(img);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-         <a href="photo.hbs">Home</a>
+            <a href="photo.hbs">Home</a>
             <a href="photologin.hbs">Login</a>
             <a href="photoregister.hbs">Register</a>
         </nav>
@@ -17,6 +43,7 @@
     <main>
         <h1>Welcome to Photo Sharing App</h1>
         <p>Share your favorite moments with us.</p>
+        <div id="image-container"></div>
     </main>
     <footer>
         <p>&copy; 2024 Photo Sharing App</p>

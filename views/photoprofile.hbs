@@ -6,7 +6,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="style/photo.css">
 </head>
-<body>
+<body class="profile">
     <header>
         <nav>
             <a href="photo.hbs">Home</a>
@@ -17,18 +17,19 @@
     <main>
         <h1>User Profile</h1>
         <div class="profile-info">
-            <p>Name: John Doe</p>
-            <p>Email: john@example.com</p>
-            <p>Mobile: 123-456-7890</p>
+            <p>Name: {{user.name}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Mobile: {{user.mobile}}</p>
         </div>
         <div class="user-photos">
             <h2>Your Photos</h2>
-            <img src="profile1.jpg" alt="Profile Photo 1">
-            <img src="profile2.jpg" alt="Profile Photo 2">
+            {{#each user.photos}}
+                <img src="/photo/{{this._id}}" alt="User Photo">
+            {{/each}}
         </div>
-        <form action="upload" method="post" enctype="multipart/form-data">
+        <form action="/upload" method="post" enctype="multipart/form-data">
             <label for="photo">Upload More Photos:</label>
-            <input type="file" id="photo" name="photo" multiple>
+            <input type="file" id="photo" name="files" multiple>
             <button type="submit">Upload</button>
         </form>
     </main>
